@@ -73,16 +73,21 @@
     });
 
     // Form Submit
-    document.getElementById('leadForm').addEventListener('submit', function(e) {
-      e.preventDefault();
+document.getElementById('leadForm').addEventListener('submit', function(e) {
+  e.preventDefault();
 
-      const email = document.getElementById('email').value;
+  const email = document.getElementById('email').value;
 
-      dataLayer.push({
-        event: 'form_submit',
-        form_id: 'leadForm',
-        user_email: email
-      });
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    event: 'form_submit',
+    form_id: 'leadForm',
+    user_email: email
+  });
+
+  // Redirect to confirmation page
+  window.location.href = '/Testsite/thank-you.html';
+});
 
       window.location.href = '/thank-you.html';
     });
