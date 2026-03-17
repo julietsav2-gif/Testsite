@@ -73,8 +73,8 @@
     });
 
     // Form Submit
-document.getElementById('leadForm').addEventListener('submit', function(e) {
-  e.preventDefault();
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
   const email = document.getElementById('email').value;
 
@@ -84,6 +84,10 @@ document.getElementById('leadForm').addEventListener('submit', function(e) {
     form_id: 'leadForm',
     user_email: email
   });
+
+  // Redirect to confirmation page
+  window.location.href = '/Testsite/thank-you.html';
+});
 
   // Redirect to confirmation page
   window.location.href = '/Testsite/thank-you.html';
